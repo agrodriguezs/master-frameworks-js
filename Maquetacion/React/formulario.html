@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Maquetacion</title>
+    <!--HOJA DE ESTILOS-->
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+</head>
+<body>
+    <header id="header">    
+        <div class="center">
+            <div id="logo" class="app-logo">
+                <!--LOGO-->
+                <img src="assets/images/react.svg" alt="logotipo">
+                <span class="brand">
+                    <strong>Curso</strong>React
+                </span>
+            </div>
+            <nav id="menu">
+                <!--MENU-->
+                <ul>
+                    <li>
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">BLog</a>
+                    </li>
+                    <li>
+                        <a href="formulario.html">Formulario</a>
+                    </li>
+                    <li>
+                        <a href="#">Pagina 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Pagina 2</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="clearfix" ></div>
+        </div>
+    </header>
+    <div class="center">
+        <section id="content">
+            <h1 class="subheader">Formulario</h1>
+            <form action="" class="mid-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre">
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido">
+                </div>
+                <div class="form-group">
+                    <label for="bio">Biografia</label>
+                    <textarea name="bio"></textarea>
+                </div>
+                <div class="form-group radiobuttons">
+                    <label for="genero">Genero</label>
+                    <div class="grupo-radio">
+                        <input type="radio" name="genero" value="hombre"> hombre
+                        <input type="radio" name="genero" value="mujer"> Mujer
+                        <input type="radio" name="genero" value="otro"> Otro
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <input type="submit" name="submit" value="Buscar" class="btn btn-success">
+            </form>
+        </section>
+        <aside id="sidebar">
+            <div id="nav-blog" class="sidebar-item">
+                <h3>Puedes hacer esto</h3>
+                <a href="#" class="btn btn-success">Crear Articulo</a>
+            </div>
+            <div id="search" class="sidebar-item">
+                <h3>Buscador</h3>
+                <p>Encuentra el Articulo que buscas</p>
+                <form action="">
+                    <input type="text" name="search">
+                    <input type="submit" name="submit" value="Buscar" class="btn">
+                </form>
+            </div>
+        </aside>
+        <div class="clearfix"></div>
+    </div>
+    <footer id="footer">
+        <div class="center">
+            <p>
+                &copy; Master en Frameworks JS con victorroblesweb.com
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

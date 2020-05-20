@@ -1,0 +1,433 @@
+body{
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+#header{
+    height: 120px;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    border-top: 6px solid #61dafb;
+}
+.center{
+    width: 85%;
+    margin: 0px auto;   
+}
+.clearfix{
+    clear: both;
+    float: none;
+}
+#logo{
+    width: 30%;
+    font-size: 30px;
+    float: left;
+    margin-top: 35px;
+}
+
+#logo img{
+    display: block;
+    float: left;
+    height: 60px;
+    margin-top: -10px;
+    margin-right: 2px;
+    animation: react-animation infinite 30s linear;
+}
+
+@keyframes react-animation {
+    from {
+            transform: rotate(0deg);
+    }
+    to {
+             transform: rotate(360deg);
+    }
+}
+
+.brand {
+    display: block;
+    float: left;
+    margin: 0px;
+}
+
+
+#menu{
+    width: 70%;
+    float: right;
+    font-size: 18px;
+}
+
+#menu ul{
+    line-height: 85px;
+    float: right;
+    width: 60%;
+}
+
+#menu ul li{
+    list-style: none;
+    height: 46px;
+    display: inline-block;
+    margin: 0px 15px 0px 15px;
+}
+
+#menu a{
+    text-decoration: none;
+    color: #444;
+    transition: 300ms all;
+}
+
+#menu a:hover{
+    color:#50acc5;
+}
+
+#slider {
+    width: 100%;
+    height: 350px;
+    color: white;
+    text-shadow: 0px 0px 5px #444;
+
+    /*degradado */
+    background: rgba(59,183,245,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(59,183,245,1) 0%, rgba(160,217,250,1) 97%, rgba(160,217,250,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(59,183,245,1)), color-stop(97%, rgba(160,217,250,1)), color-stop(100%, rgba(160,217,250,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(59,183,245,1) 0%, rgba(160,217,250,1) 97%, rgba(160,217,250,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(59,183,245,1) 0%, rgba(160,217,250,1) 97%, rgba(160,217,250,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(59,183,245,1) 0%, rgba(160,217,250,1) 97%, rgba(160,217,250,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(59,183,245,1) 0%, rgba(160,217,250,1) 97%, rgba(160,217,250,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bb7f5', endColorstr='#a0d9fa', GradientType=1 );
+}
+
+#slider h1{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    padding-top:140px;
+    
+}
+
+.btn-white{
+    display: block;
+    background-color: white;
+    color: rgb(121, 120, 120);
+    padding: 10px;
+    width: 100px;
+    height: 30px;       
+    margin: 0px auto;   
+    margin-top: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-shadow: none;
+    line-height: 30px;
+    box-shadow: 0px 0px 5px rgb(121, 120, 120);
+    border-radius: 4px;
+}
+
+#slider.slider-small{
+    height: 150px;
+}
+
+#slider.slider-small h1{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    padding-top:50px;
+}
+
+#content{
+    width: 70%;
+    float: left;
+    min-height: 650px;
+    margin-right: 20px;
+
+}
+#sidebar{
+    width: 25%;
+    float: left;
+
+    margin-right: 20px;
+}
+.sidebar-item{
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin-top: 30px;
+
+}
+.sidebar-item h3{
+    text-transform: uppercase;
+    font-size: 18px;
+    margin: 0px;
+    padding-bottom: 10px;
+    margin-bottom:10px ;
+    border-bottom: 3px solid rgb(219, 219, 219);
+}
+
+.sidebar-item .btn{
+    margin-top: 10px;
+    margin: 0px auto;
+}
+.btn {
+    display: block;
+    background-color: black;
+    color: white;
+    padding:15px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    max-width: 120px;
+    transition: 300ms all;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.btn-success{
+    background-color: rgb(117, 155, 80);
+}
+.btn-success:hover{
+    background-color: rgb(15, 15, 15);
+}
+
+.mid-form{
+    width: 50%;
+    margin: 0px auto;
+}
+
+.mid-form label{
+    display: block;
+    float: left;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+input[type="text"], textarea{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    padding: 3px;
+    margin-bottom: 10px;
+    transition: 300ms all;
+    border-radius: 4px;
+    color: #444;
+}
+
+textarea {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: 150px;
+    min-height: 150px;
+    max-height: 300px;
+}
+
+
+input[type="text"]:focus, 
+textarea:focus {
+    box-shadow: 0px 0px 5px #444 inset;
+    outline: none;
+}
+
+.radiobuttons {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: left;
+}
+input[type="radio"]{
+    height: 18px;
+    width: 18px;
+    border-radius: 100%;
+    outline: none;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: rgb(119, 118, 118);
+
+}
+input[type="radio"]:checked{
+    color: rgb(117, 155, 80);
+}
+
+.grupo-radio {
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: left;
+}
+#footer{
+    width: 100%;
+    background-color: #f7f7f7;
+    height: 70px;
+    line-height: 70px;
+    color: #444;
+
+}
+
+#footer p{
+    margin: 0px;
+    padding: 0px;
+}
+
+.article-item{
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: left;
+}
+.article-item .image-wrap{
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    float: left;
+    margin-right: 15px;
+    border: 1px solid #ccc;
+}
+.article-item .image-wrap img{
+    height: 100%;
+    text-align: center;
+}
+.article-item h2{
+    display: block;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 7px;
+}
+.article-item .date{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(125, 125, 125);
+
+}
+.article-item a{
+    display: block;
+    color: #444;
+    text-decoration: none;
+    transition: 300ms all;
+    margin-top: 30px;
+}
+.article-item a:hover{
+    color: #50acc5;
+    text-decoration: underline;
+}
+
+.subheader{
+    font-size: 38px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.article-detail .image-wrap{
+    float: none;
+    width: 100%;
+    height: 300px;
+}
+.article-detail .image-wrap img{
+    width: 100%;
+    height: auto;
+}
+.article-detail .subheader{
+    margin-top: 15px;
+    margin-bottom: 0px;
+    border: none;
+}
+
+/* RESPONSIBLE */
+/*desde la anchura 0px hasta 1488px de pantalla */
+@media ( max-width: 1488px){
+    .center{
+        width: 85%;
+    }   
+}
+/*desde la anchura 0px hasta 1314px de pantalla */
+@media ( max-width: 1314px){
+    .center{
+        width: 95%;
+    }
+    #menu ul{
+        width: auto;
+    }
+}
+/*desde la anchura 0px hasta 782px de pantalla */
+@media ( max-width: 797px){
+
+    #logo{
+        float: none;
+        width: 240px;
+        margin: 0px auto;
+        margin-top: 20px;
+    }
+
+    #menu,
+    #menu ul{
+        clear: both;
+        float: none;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        line-height: 40px;
+    }
+
+    #content{
+        float: none;
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    #sidebar{
+        float: none;
+        width: 70%;
+        margin: 0px auto;
+    }
+
+    #slider h1{
+        padding-top: 115px;
+        font-size: 24px;
+    }
+
+    .mid-form{
+        width: 75%;
+    }
+}
+/*desde la anchura 0px hasta 497px de pantalla */
+@media ( max-width: 497px){
+    #header{
+        min-height: 130px;
+        overflow: hidden;
+    }
+    #menu,
+    #menu ul{
+        line-height: 50px;
+    }
+
+    #menu ul li{
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 17px;
+    }
+
+    #slider{
+        height: 180px;
+    }
+    #slider h1{
+        font-size: 19px;
+        padding-top: 30px;
+    }
+
+    #slider .btn-white{
+        margin-top: 30px;
+    }
+
+    #slider.slider-small{
+        height: 100px;
+    }
+    #slider.slider-small h1{
+        padding-top: 35px;
+    }
+}
