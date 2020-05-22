@@ -25,15 +25,11 @@ app.get('/probando',(req, res) => {
     console.log('hola mundo');
 });
 app.get('/probando2',(req, res) => {
-    res.status(200).send(`
-        <h1>Todo es correcto</h1>
-        <ol>
-            <li>Node Js</li>
-            <li>React Js</li>
-            <li>Angular Js</li>
-            <li>Vue Js</li>
-        </ol>
-    `);
+    res.status(200).send({
+        curso: "Master en Frameworks JS",
+        autor: "Victor Robles",
+        fecha: "Mayo 2020"
+    });
 });
 
 
