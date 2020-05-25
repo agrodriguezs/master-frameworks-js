@@ -2,6 +2,8 @@
 
 var validator = require('validator');
 var Article   = require('../models/article');
+var fs        = require('fs');
+var path      = require('path');
 
 var controller = {
     datosCurso: (req, res) => {
@@ -166,7 +168,7 @@ var controller = {
             Article.findByIdAndUpdate(
                 {_id: articleId},params,
                 {new:true},
-                (err, articleUpdated)=>{
+                (err,articleUpdated) => {
                     if(err){
                         return res.status(500).send({
                             status: 'error',
@@ -206,7 +208,7 @@ var controller = {
         // Buscar y Eliminar
         Article.findByIdAndDelete(
             {_id: articleId},
-            (err, articleRemoved)=>{
+            (err,articleRemoved) => {
                 if(err){
                     return res.status(500).send({
                         status: 'error',
@@ -227,8 +229,87 @@ var controller = {
             }
         );
 
+    },
+    uploadImage: (req,res) => {
+
+        var articleId = req.params.id;
+
+        // Recoger el fichero de la peticion
+        var image  = req.file;
+
+        if(image){
+       
+            // Conseguir nombre y extension del archivo
+            var file_path = image.path;
+            var file_split = file_path.split('/');
+            var file_name = file_split[2];
+            var file_directory = file_split[0]+'/'+file_split[1]+'/';
+            var ext_split = image.originalname.split('\.');
+            var file_ext = ext_split[1];
+
+            // Comprobar la extension de solo imagen
+            if(file_ext== 'png' || file_ext== 'gif' || file_ext== 'jpeg' || file_ext== 'jpg'){
+                
+                // Si todo es valido
+                // buscar el articulo, asignarle el nombre de la imagen y actualizarlo
+                Article.findById(
+                    articleId, 
+                    (err, articleFinded) => {
+                        if(!articleFinded){
+                            res.status(404).send({
+                                status: 'error',
+                                message: 'No existe el articulo !'
+                            });
+                        }else{
+                            
+                            var imagenAnterior = file_directory+articleFinded.image;
+                            fs.unlink(imagenAnterior, (err) => {
+                                if (err) throw err;
+                                // console.log(imagenAnterior + ' was deleted');
+                            });
+                        }
+                   }
+                );
+                Article.findByIdAndUpdate(
+                    articleId, 
+                    {image:file_name}, 
+                    {new:true},
+                    (err, articleUpdated) => {
+                        if(!articleUpdated){
+                            res.status(404).send({
+                                status: 'error',
+                                message: 'No se ha podido actualizar el articulo'
+                            });
+                        }else{
+                            res.status(200).send({
+                                status:  'success',
+                                message: 'Imagen guardada Exitosamente !',
+                                article: articleUpdated
+                            });
+                        }
+                   }
+                ); 
+            }
+            // si no lo es borrar el fichero.
+            else{
+                fs.unlink(file_path, (err) => {
+                    res.status(500).send({
+                        status: 'error',
+                        message: 'Extension del archivo no valida'
+                    });
+                });
+                
+            }
+          }else{
+            res.status(404).send({
+                status: 'error',
+                message: 'No has subido ninguna imagen..'
+            });
+          }
+          
+ 
     }
 
 }; //end controller 
 
-module.exports = controller;    
+module.exports = controller;  
