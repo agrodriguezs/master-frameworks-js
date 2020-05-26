@@ -33,7 +33,7 @@ router.get('/articulo/:id', ArticleController.getArticle);
 router.put('/articulo/:id', ArticleController.update);
 router.delete('/articulo/:id', ArticleController.delete);
 router.post('/upload-image/:id', mul_upload.single('image'), ArticleController.uploadImage);
-
+router.get('/get-image/:image', ArticleController.getImage);
 // rutas para articulos
 router.post('/save', ArticleController.save);
 

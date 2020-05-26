@@ -263,10 +263,13 @@ var controller = {
                         }else{
                             
                             var imagenAnterior = file_directory+articleFinded.image;
-                            fs.unlink(imagenAnterior, (err) => {
-                                if (err) throw err;
-                                // console.log(imagenAnterior + ' was deleted');
-                            });
+                            if (articleFinded.image){
+                                fs.unlink(imagenAnterior, (err) => {
+                                    if (err) throw err;
+                                    // console.log(imagenAnterior + ' was deleted');
+                                });   
+                            }
+                     
                         }
                    }
                 );
@@ -275,12 +278,12 @@ var controller = {
                     {image:file_name}, 
                     {new:true},
                     (err, articleUpdated) => {
-                        if(!articleUpdated){
+                        if(err || !articleUpdated){
                             res.status(404).send({
                                 status: 'error',
                                 message: 'No se ha podido actualizar el articulo'
                             });
-                        }else{
+                        }else {
                             res.status(200).send({
                                 status:  'success',
                                 message: 'Imagen guardada Exitosamente !',
@@ -308,6 +311,28 @@ var controller = {
           }
           
  
+    },
+    getImage: (req,res) => {
+
+        var image = req.params.image;
+
+        var path_file = './upload/articles/'+ image;
+
+        fs.exists(path_file,(exists) => {
+            console.log(path_file +' sera qe es ' +exists);
+            if (exists){
+
+                return res.sendFile(path.resolve(path_file));
+            }else {
+                res.status(404).send({
+                    status: 'error',
+                    message: 'La imagen no existe !'
+                });
+            }
+
+        });
+
+   
     }
 
 }; //end controller 
