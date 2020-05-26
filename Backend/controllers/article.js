@@ -138,7 +138,7 @@ var controller = {
             // Devolver en json
             return res.status(200).send({
                 status: 'success',
-                article: articleFinded
+                articleFinded
             });
         });
  
@@ -184,7 +184,7 @@ var controller = {
         
                     return res.status(200).send({
                         status: 'success',
-                        article: articleUpdated
+                        articleUpdated
                     });
                 }
             );
@@ -224,7 +224,7 @@ var controller = {
     
                 return res.status(200).send({
                     status: 'success',
-                    article: articleRemoved
+                    articleRemoved
                 });
             }
         );
@@ -287,7 +287,7 @@ var controller = {
                             res.status(200).send({
                                 status:  'success',
                                 message: 'Imagen guardada Exitosamente !',
-                                article: articleUpdated
+                                articleUpdated
                             });
                         }
                    }
@@ -333,6 +333,32 @@ var controller = {
         });
 
    
+    },
+    search: (req,res) => {
+
+        var searchString = req.params.search;
+
+        Article.find({
+            "$or":[
+                {title: {"$regex":searchString, "$options":"i"}},
+                {content: {"$regex":searchString, "$options":"i"}}                                                    
+            ]                                                   
+        })
+        .sort([['date', 'descending']])
+        .exec((err, articles) =>{
+            if (err){
+                res.status(404).send({
+                    status: 'error',
+                    message: 'No se encontro la busqueda'
+                });
+            }
+            else{
+                res.status(200).send({
+                    status: 'success',
+                    articles
+                });
+            }
+        })
     }
 
 }; //end controller 
