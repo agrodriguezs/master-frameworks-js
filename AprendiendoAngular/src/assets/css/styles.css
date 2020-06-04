@@ -147,6 +147,8 @@ body{
     border-radius: 4px;
 }
 
+#slider.slider-big{}
+
 #slider.slider-small{
     height: 150px;
 }

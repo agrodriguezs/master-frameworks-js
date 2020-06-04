@@ -1,0 +1,14 @@
+<article class="article-item">
+
+    <div class="">
+        <img src="{{pelicula.image}}" alt="{{pelicula.title}}">
+    </div>
+    <span class="year" [ngClass]="{
+				'year-green': pelicula.year > 2016,
+				'year-red': pelicula.year <= 2016
+			}">
+    	{{pelicula.year}}
+    </span>
+    <h2>{{pelicula.title}}</h2>
+    <div class="clearfix" ></div>
+</article>
