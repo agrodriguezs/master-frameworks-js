@@ -11,6 +11,7 @@ export class PeliculasComponent implements OnInit {
 
 	public titulo: string;
 	public peliculas: Pelicula[]; 	
+  public favorita: Pelicula;
 
   constructor() { 
   	this.titulo = "Peliculas";
@@ -26,4 +27,7 @@ export class PeliculasComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  mostrarFavorita(event){
+    this.favorita = event.pelicula;
+  }
 }

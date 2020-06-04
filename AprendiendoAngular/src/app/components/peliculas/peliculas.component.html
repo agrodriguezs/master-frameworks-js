@@ -6,12 +6,17 @@
 <div class="center">
 
     <section id="content">
+        <div id="favorita" *ngIf="favorita">
+            <h3>Pelicula Favorita: {{favorita.title}}</h3>
+        </div>
+
         <h2 class="subheader">Peliculas</h2>
 
         <div id="articles" *ngIf="peliculas">
             <div  *ngFor="let pelicula of peliculas">
                 <app-pelicula
-                    [pelicula]= "pelicula">
+                    [pelicula]= "pelicula"
+                    (MarcarFavorita)="mostrarFavorita($event)">
                 </app-pelicula>
             </div>
 
