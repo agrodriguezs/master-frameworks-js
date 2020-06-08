@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+ 
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioComponent implements OnInit {
 
-  constructor() { }
+	public user: any;
+
+  constructor() { 
+  	this.user = {
+  		nombre: '',
+  		apellidos: '',
+  		bio: '',
+  		genero: ''
+  	};	 
+  }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+  	alert("el formulario se ha enviado");
+  	console.log(this.user);
   }
 
 }

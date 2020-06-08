@@ -12,6 +12,7 @@ export class PeliculasComponent implements OnInit {
 	public titulo: string;
 	public peliculas: Pelicula[]; 	
   public favorita: Pelicula;
+  public fecha: any;
 
   constructor() { 
   	this.titulo = "Peliculas";
@@ -22,6 +23,7 @@ export class PeliculasComponent implements OnInit {
   	new Pelicula("Caracas Onto Death", 2001, "https://m.media-amazon.com/images/M/MV5BMTg1MzAxODYxM15BMl5BanBnXkFtZTcwNDA3NTYzMQ@@._V1_SX300.jpg"),
   	new Pelicula("Snoopy: The Musical", 2018, "https://m.media-amazon.com/images/M/MV5BMTQ2NzQ3MjYxNV5BMl5BanBnXkFtZTcwMzc1MDcxMQ@@._V1_SX300.jpg")
   	];
+    this.fecha = new Date(2020, 5, 5);
   }
 
   ngOnInit(): void {

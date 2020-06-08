@@ -7,7 +7,8 @@
 
     <section id="content">
         <div id="favorita" *ngIf="favorita">
-            <h3>Pelicula Favorita: {{favorita.title}}</h3>
+            <h3>Pelicula Favorita: {{favorita.title | uppercase }}</h3>
+            <h3>Año: {{favorita.year| espar }}</h3>
         </div>
 
         <h2 class="subheader">Peliculas</h2>
