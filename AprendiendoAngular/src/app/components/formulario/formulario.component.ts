@@ -26,4 +26,11 @@ export class FormularioComponent implements OnInit {
   	console.log(this.user);
   }
 
+  haHechoClick(){
+  	alert("ha hecho click");
+  }
+
+  haSalido(){
+  	alert("ha salido!!");
+  }
 }

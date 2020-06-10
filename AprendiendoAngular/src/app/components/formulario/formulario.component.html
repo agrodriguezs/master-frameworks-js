@@ -49,7 +49,13 @@
             </div>
             <div class="clearfix"></div>
             <input type="submit" name="submit" value="Buscar" class="btn btn-success" [disabled]="userForm.invalid">
+
+              <h2 class="subheader">Eventos</h2>
+            <button (click)="haHechoClick()">Has click aqui!</button>
+            <input type="text" name="evento" #evento="ngModel" [(ngModel)]= "user.evento" (keyup.enter)="haSalido()" >
         </form>
+
+
         <!--
         <div *ngIf="user.nombre">
             <ul>
