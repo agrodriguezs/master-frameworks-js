@@ -26,7 +26,7 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
 
-  	this._articleService.getArticle().subscribe(
+  	this._articleService.getArticles().subscribe(
 
   		response => {
   			if( response.articles){

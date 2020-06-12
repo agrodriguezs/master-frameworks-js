@@ -22,7 +22,7 @@ export class ArticleService {
 		return "soy el servicio de Articulos!!";
 	}
 
-	getArticle(last:any = null):Observable<any>{
+	getArticles(last:any = null):Observable<any>{
 
 		var articles = 'articulos';
 
@@ -32,6 +32,12 @@ export class ArticleService {
 		}
 		
 		return this._http.get(this.url+articles);
+	}
+
+	getArticle(articleId):Observable<any>{
+
+	
+		return this._http.get(this.url+'articulo/'+articleId);
 	}
 
 }
