@@ -128,8 +128,8 @@ var controller = {
         }
 
         // Buscar el articulo
-        Article.findById(articleId, (err,articleFinded) => {
-            if(err || !articleFinded){
+        Article.findById(articleId, (err,article) => {
+            if(err || !article){
                 return res.status(404).send({
                     status: 'error',
                     message: 'No se encuetra el articulo !'
@@ -138,7 +138,7 @@ var controller = {
             // Devolver en json
             return res.status(200).send({
                 status: 'success',
-                articleFinded
+                article
             });
         });
  
@@ -347,17 +347,23 @@ var controller = {
         .sort([['date', 'descending']])
         .exec((err, articles) =>{
             if (err){
-                res.status(404).send({
+                return res.status(500).send({
                     status: 'error',
                     message: 'No se encontro la busqueda'
                 });
             }
-            else{
-                res.status(200).send({
-                    status: 'success',
-                    articles
+
+            if (!articles || articles.length <=0){
+                return res.status(404).send({
+                    status: 'error',
+                    message: 'No hay articulos para mostar'
                 });
             }
+            return res.status(200).send({
+                    status: 'success',
+                    articles
+            });
+            
         })
     }
 

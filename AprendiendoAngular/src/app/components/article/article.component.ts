@@ -30,13 +30,21 @@ export class ArticleComponent implements OnInit {
   ngOnInit(): void {
 
   	this._route.params.subscribe(params => {
-      let id= params['id'];
+      
+      let id = params['id'];
 
       this._articleService.getArticle(id).subscribe(
        response => {
-         if(response.article){
+         console.log(response);
+        if(response.article){
+
           this.article = response.article;
+
+        }else{
+
+          this._router.navigate(['/home']);
         }
+
        },
        error => {
           console.log(error);

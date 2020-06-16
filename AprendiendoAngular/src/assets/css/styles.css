@@ -206,12 +206,21 @@ body{
     border: none;
     cursor: pointer;
     border-radius: 4px;
+    text-align: center;
 }
 .btn-success{
     background-color: rgb(117, 155, 80);
 }
-.btn-success:hover{
-    background-color: rgb(15, 15, 15);
+.btn:hover{
+    transition: all 300ms;
+    opacity: 0.8;
+}
+
+.btn-warning{
+    background-color: rgb(238, 165, 6);
+}
+.btn-danger{
+    background-color: rgb(201, 21, 21);
 }
 
 .mid-form{

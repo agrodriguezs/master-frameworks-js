@@ -12,4 +12,10 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goSearch(){
+  	console.log("buscando...");
+  	alert("alerta");
+
+
+  }
 }
