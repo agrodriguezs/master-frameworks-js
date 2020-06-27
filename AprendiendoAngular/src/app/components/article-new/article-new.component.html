@@ -1,0 +1,48 @@
+<div class="center">
+
+    <section id="content">
+         <h1 class="subheader">Crear Artículo Nuevo</h1>
+        <form action="" class="mid-form"  #articleForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+           
+                <label for="title">Título</label>
+                <input type="text" name="title" #title="ngModel" [(ngModel)]= "article.title" required>
+               
+                <small *ngIf="!title.valid && title.touched"> 
+                    El título no es válido
+                </small>
+
+            </div>
+            <div class="form-group">
+                <label for="date">Fecha</label>
+                <input type="text" name="dates" #dates="ngModel" [(ngModel)]= "article.date">
+               
+                <small *ngIf="!dates.valid && dates.touched"> 
+                    La fecha no es válida
+                </small> 
+            </div>
+            <div class="form-group">
+                <label for="content">Contenido</label>
+                <textarea name="content" #content="ngModel" [(ngModel)]= "article.content" required></textarea>
+                <small *ngIf="!content.valid && content.touched"> 
+                    El Contenido no es válido
+                </small> 
+            </div>
+
+            <div class="form-group">
+                <label for="image">Imagen</label>
+                <input type="file" name="image0">
+
+            </div>
+
+            <div class="clearfix"></div>
+            <input type="submit" name="submit" value="Crear" class="btn btn-success" [disabled]="articleForm.invalid">
+
+        </form>
+
+    </section>
+
+    <app-sidebar></app-sidebar>  
+
+</div>
+

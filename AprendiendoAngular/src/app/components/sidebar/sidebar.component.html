@@ -5,7 +5,7 @@
 
         <h3>Puedes hacer esto</h3>
 
-        <a href="#" class="btn btn-success">Crear Articulo</a>
+        <a [routerLink]="['/blog/crear']" class="btn btn-success">Crear Articulo</a>
 
     </div>
 
@@ -21,10 +21,8 @@
 
         <form #f="ngForm" (ngSubmit)="goSearch()" novalidate>
 
-            <input name="search" ngModel required #search="ngModel">
-
-            <button>Buscar la palabra</button>
-
+            <input type="text" name="search" [(ngModel)]="searchString" />
+            <input type="submit" name="submit" value="Buscar" class="btn" />
         </form>
 
 
@@ -32,3 +30,4 @@
 
 </aside>
 <div class="clearfix"></div>
+    

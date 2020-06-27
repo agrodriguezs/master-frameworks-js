@@ -319,7 +319,7 @@ var controller = {
         var path_file = './upload/articles/'+ image;
 
         fs.exists(path_file,(exists) => {
-            console.log(path_file +' sera qe es ' +exists);
+            //console.log(path_file +' sera qe es ' +exists);
             if (exists){
 
                 return res.sendFile(path.resolve(path_file));
